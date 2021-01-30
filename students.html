@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Students</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="index.html">faber college</a>
+              </nav>
+             
+            <hr>
+        
+            <div class="row button_row">
+                <div class="col" align="center">
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">students</button>
+                </div>
+                <div class="col" align="center">
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">instructors</button>
+                </div>
+                <div class="col" align="center">
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">advisors</button>
+                </div>
+                <div class="col" align="center">
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">classes</button>
+                </div>
+
+            </div>
+
+            <table class="table table-borderless table-hover w-auto">
+                <thead>
+                    <tr>
+                       <th>first</th>
+                       <th>last</th>
+                       <th>major</th>
+                       <th>advisor</th>
+                       <th>gpa</th>
+                       <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table_rows" id="">
+                        <td>John</td>
+                        <td>Blutarsky</td>
+                        <td>computer science</td>
+                        <td>Jim Wilson</td>
+                        <td>3.20</td>
+                        <td>
+                            <span class="edit" onclick="window.location.href='addstudent.html';">edit</span>
+                            <span class="edit">delete</span>
+                        </td>
+                    </tr>
+                    <tr class="table_rows" id="">
+                        <td>Steve</td>
+                        <td>Johnson</td>
+                        <td>computer science</td>
+                        <td>Jared Porter</td>
+                        <td>3.90</td>
+                        <td>
+                            <span class="edit" onclick="window.location.href='addstudent.html';">edit</span>
+                            <span class="edit">delete</span>
+                        </td>
+                    </tr>    
+                </tbody>
+                <tfoot>
+                    <td>
+                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addstudent.html';">+</button>
+                    </td>
+                </tfoot>
+
+            </table>
+
+
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
