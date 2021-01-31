@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Students</title>
+        <title>Advisors</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -21,13 +21,13 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';" >students</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';" >advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">advisors</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
@@ -41,41 +41,32 @@
                         <th>id</th>
                         <th>first</th>
                         <th>last</th>
-                        <th>major</th>
-                        <th>advisor</th>
-                        <th>gpa</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="table_rows" id="">
                         <td>1</td>
-                        <td>John</td>
-                        <td>Blutarsky</td>
-                        <td>Computer Science</td>
-                        <td>Jim Wilson</td>
-                        <td>3.20</td>
+                        <td>Jim</td>
+                        <td>Wilson</td>
                         <td>
-                            <span class="edit" onclick="window.location.href='addstudent.html';">edit</span>
+                            <span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
                             <span class="edit">delete</span>
                         </td>
                     </tr>
                     <tr class="table_rows" id="">
-                        <th>2</th>
-                        <td>Steve</td>
-                        <td>Johnson</td>
-                        <td>NULL</td>
-                        <td>Jared Porter</td>
-                        <td>3.90</td>
+                        <td>2</td>
+                        <td>Jared</td>
+                        <td>Porter</td>
                         <td>
-                            <span class="edit" onclick="window.location.href='addstudent.html';">edit</span>
+                            <span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
                             <span class="edit">delete</span>
                         </td>
                     </tr>    
                 </tbody>
                 <tfoot>
                     <td>
-                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addstudent.html';">+</button>
+                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addadvisor.html';">+</button>
                     </td>
                 </tfoot>
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Students</title>
+        <title>Advisors</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -21,13 +21,13 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';" >students</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';" >advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">advisors</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
@@ -40,7 +40,7 @@
                 <div id="main_content">
                     <!-- <form action="" method=""> -->
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="STUDENT ID">
+                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="ADVISOR ID">
                         </div>
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="FIRST NAME">
@@ -48,18 +48,9 @@
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="last" class="mb-2 mr-sm-2" autocomplete="off" placeholder="LAST NAME">
                         </div>
-                        <div class="input-container" >
-                            <input type="text" name="major" class="mb-2 mr-sm-2" autocomplete="off" placeholder="MAJOR">
-                        </div>
-                        <div class="input-container" >
-                            <input type="text" name="advisor" class="mb-2 mr-sm-2" autocomplete="off" placeholder="ADVISOR">
-                        </div>
                         <div class="input-container">
-                            <input type="text" name="gpa" id="temp" autocomplete="off" class="mb-2 mr-sm-2" placeholder="GPA">
-                        </div>
-                        <div class="input-container">
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';">submit</button>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';">cancel</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';">submit</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';">cancel</button>
                         </div>
                         
                     <!-- </form> -->
