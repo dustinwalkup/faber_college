@@ -1,3 +1,4 @@
 # cs340_project
-# Eric Tran
-# Dustin Walkup
+Project Group 22:
+Eric Tran
+Dustin Walkup
