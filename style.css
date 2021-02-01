@@ -48,6 +48,22 @@ body {
     text-transform: uppercase;
 }
 
+.dropdown-item {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#dropdownMenu2 {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 #myButton {
     border-radius:0;
     font-family: 'Roboto';
