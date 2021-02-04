@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Advisors</title>
+        <title>Classrooms</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -27,53 +27,45 @@
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';" >advisors</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classrooms.html';" >classrooms</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">classrooms</button>
                 </div>
-
             </div>
 
             <table class="table table-borderless table-hover w-auto">
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>first</th>
-                        <th>last</th>
+                        <th>capacity</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="table_rows" id="">
                         <td>1</td>
-                        <td>Jim</td>
-                        <td>Wilson</td>
+                        <td>30</td>
                         <td>
-                            <!--<span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
-                            <span class="edit">delete</span>-->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">delete</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">delete</button>
                         </td>
                     </tr>
                     <tr class="table_rows" id="">
-                        <td>2</td>
-                        <td>Jared</td>
-                        <td>Porter</td>
+                        <th>2</th>
+                        <td>60</td>
                         <td>
-                            <!--<span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
-                            <span class="edit">delete</span>-->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">delete</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">delete</button>
                         </td>
                     </tr>    
                 </tbody>
                 <tfoot>
                     <td>
-                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addadvisor.html';">+</button>
+                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addclassroom.html';">+</button>
                     </td>
                 </tfoot>
 
@@ -82,6 +74,9 @@
 
         </div>
         
-        <script src="" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     </body>
 </html>

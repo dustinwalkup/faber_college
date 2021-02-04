@@ -32,6 +32,9 @@
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">classes</button>
                 </div>
+                <div class="col" align="center">
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classrooms.html';" >classrooms</button>
+                </div>
 
             </div>
 
@@ -42,6 +45,7 @@
                         <th>name</th>
                         <th>subject</th>
                         <th>instructor</th>
+                        <th>classroom</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -51,9 +55,12 @@
                         <td>Intro to Computer Science</td>
                         <td>Computer Science</td>
                         <td>Paul Peterson</td>
+                        <td>1</td>
                         <td>
-                            <span class="edit" onclick="window.location.href='addclass.html';">edit</span>
-                            <span class="edit">delete</span>
+                            <!--<span class="edit" onclick="window.location.href='addclass.html';">edit</span>
+                            <span class="edit">delete</span>-->
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclass.html';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclass.html';">delete</button>
                         </td>
                     </tr>
                     <tr class="table_rows" id="">
@@ -61,9 +68,12 @@
                         <td>Intro to Economics</td>
                         <td>Economics</td>
                         <td>Michael Scott</td>
+                        <td>2</td>
                         <td>
-                            <span class="edit" onclick="window.location.href='addclass.html';">edit</span>
-                            <span class="edit">delete</span>
+                            <!--<span class="edit" onclick="window.location.href='addclass.html';">edit</span>
+                            <span class="edit">delete</span>-->
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclass.html';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclass.html';">delete</button>
                         </td>
                     </tr>    
                 </tbody>
