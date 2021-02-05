@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Students</title>
+        <title>Students Classes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -21,7 +21,7 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='students.html';">students</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
@@ -38,29 +38,31 @@
 
             </div>
 
+            <div class="table_header">
+                <p> student name's classes</p>     
+            </div>
+             
+
             <table class="table table-borderless table-hover w-auto">
                 <thead>
                     <tr>
                         <th>id</th>
-                        <th>first</th>
-                        <th>last</th>
-                        <th>major</th>
-                        <th>advisor</th>
-                        <th>gpa</th>
+                        <th>class name</th>
+                        <th>subject</th>
+                        <th>instructor</th>
+                        <th>classroom</th>
+                        <th>grade</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="table_rows" id="">
                         <td>1</td>
-                        <td>John</td>
-                        <td>Blutarsky</td>
+                        <td>Intro to Computer Science</td>
                         <td>Computer Science</td>
-                        <td>Jim Wilson</td>
-                        <td>3.20</td>
-                        <td>
-                            <a href="classesstudents.html" class="view_link">View Classes</a>
-                        </td>
+                        <td>Paul Peterson</td>
+                        <td>1</td>
+                        <td>A</td>
                         <td>
                             <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
                             <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
@@ -69,54 +71,37 @@
                     </tr>
                     <tr class="table_rows" id="">
                         <th>2</th>
-                        <td>Steve</td>
-                        <td>Johnson</td>
-                        <td>NULL</td>
-                        <td>Jared Porter</td>
-                        <td>3.90</td>
-                        <td>
-                            <a href="classesstudents.html" class="view_link">View Classes</a>
-                        </td>
+                        <td>Intro to Economics</td>
+                        <td>Economics</td>
+                        <td>Michael Scott</td>
+                        <td>2</td>
+                        <td>Null</td>
+                    
                         <td>
                             <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
                             <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
                             
                         </td>
                     </tr>    
-                </tbody>
+                </tbody> 
                 <tfoot>
-                    <td>
-                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addstudent.html';">+</button>
-                    </td>
-                </tfoot>
+                    <tr>
+                    <td colspan="4">
+                     <!-- <form action="" method=""> -->
 
+                        <div class="input-container col" align="left">
+                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="ADD CLASS BY ID">
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" >+</button>
+    
+                        </div>
+                        
+                    <!-- </form> -->
+                    </td>
+                </tr>    
+                </tfoot>
+                    
             </table>
 
-            <div class="row">
-                 <!-- <form action="" method=""> -->
-
-                    <div class="input-container col" align="right">
-                        <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="FILTER BY">
-                    </div>
-                   
-                    <div class="dropdown col" align="left">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            select
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">id</button>
-                            <button class="dropdown-item" type="button">first name</button>
-                            <button class="dropdown-item" type="button">last name</button>
-                            <button class="dropdown-item" type="button">major</button>
-                            <button class="dropdown-item" type="button">advisor</button>
-                            <button class="dropdown-item" type="button">gpa</button>
-                            </div>
-                       </div>
-                    
-                <!-- </form> -->
-                
-        
-            </div>
         </div>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
