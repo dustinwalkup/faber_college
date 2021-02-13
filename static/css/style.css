@@ -1,0 +1,167 @@
+
+body {
+ 
+
+    background: #FFEFBA;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+}
+
+.tagline{
+    text-align: center;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    padding-top: 25%;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    
+}
+
+.table_header{
+    text-align: center;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    padding-top: 5%;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    
+}
+
+.navbar {
+    font-family: 'Roboto';
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    
+     
+}
+
+.button_row {
+    padding-top: 35px;
+}
+
+#faber {
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Roboto';
+    font-weight: 100;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.dropdown-item {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#dropdownMenu2 {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#myButton {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-outline-light {
+    color:#000000;
+    border-color: #000000;
+
+}
+
+.table {
+    margin: auto;
+    width: 50% !important;
+    text-align: center;
+    color:black;
+    margin-top: 5%;
+ }
+
+ thead {
+    text-align: center;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    padding-top: 25%;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    
+ }
+
+ .edit:hover {
+     text-decoration: underline;
+ }
+
+ #addButton {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.input-container input {
+    border:0;
+    border-bottom:1px solid #061923;
+    background:transparent;
+    width:30%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color:#000000;
+    font-family: 'Roboto';
+    font-weight:300;
+    letter-spacing:2px;
+    margin:auto;
+
+}
+
+.input-container input:focus{
+ border:none;
+ outline:none;
+ border-bottom:1px solid #0c8bc2;
+ background:transparent;
+}
+
+#main_content{
+    text-align:center;
+    padding-top: 60px;
+}
+
+#myButtonSmall {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.view_link {
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    /* letter-spacing: 2px;
+    text-transform: uppercase; */
+    color: black;
+}
