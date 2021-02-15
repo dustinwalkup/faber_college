@@ -6,7 +6,7 @@
         <title>Students</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./static/css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
@@ -18,6 +18,12 @@
               </nav>
              
             <hr>
+
+            <!-- <h1>MySQL Results:</h1>
+            {% for row in rows%}
+            <p>{{row}}</p>
+            {% endfor %} -->
+            
         
             <div class="row button_row">
                 <div class="col" align="center">
@@ -51,13 +57,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for row in rows%}
+                   
+                   
                     <tr class="table_rows" id="">
-                        <td>1</td>
-                        <td>John</td>
-                        <td>Blutarsky</td>
-                        <td>Computer Science</td>
-                        <td>Jim Wilson</td>
-                        <td>3.20</td>
+                         
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[3]}}</td>
+                        
                         <td>
                             <a href="classesstudents.html" class="view_link">View Classes</a>
                         </td>
@@ -67,22 +78,7 @@
                             
                         </td>
                     </tr>
-                    <tr class="table_rows" id="">
-                        <th>2</th>
-                        <td>Steve</td>
-                        <td>Johnson</td>
-                        <td>NULL</td>
-                        <td>Jared Porter</td>
-                        <td>3.90</td>
-                        <td>
-                            <a href="classesstudents.html" class="view_link">View Classes</a>
-                        </td>
-                        <td>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
-                            
-                        </td>
-                    </tr>    
+                    {% endfor %}   
                 </tbody>
                 <tfoot>
                     <td>
