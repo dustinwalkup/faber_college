@@ -15,6 +15,20 @@ body {
 
 }
 
+#advisor_select {
+    width: 285px;
+    margin: 0 auto;
+    text-align: left;
+    border-radius:0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
 .tagline{
     text-align: center;
     font-family: 'Roboto';
