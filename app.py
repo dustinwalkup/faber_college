@@ -18,19 +18,21 @@ def root():
 def students():
     print("Fetching student data")
     db_connection = connect_to_database()
-    query = "SELECT * from students;"
+    query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id;"
     result = execute_query(db_connection, query).fetchall();
-    print(result)
+    # print(result)
     return render_template('students.html', rows=result)
 
 @app.route('/addstudent', methods=['POST','GET'])
 def add_student():
         db_connection = connect_to_database()
         if request.method == 'GET':
+         
             query = 'SELECT advisor_id, first_name, last_name FROM advisors'
             result = execute_query(db_connection,query).fetchall()
             print(result)
             return render_template('addstudent.html', advisors = result)
+
         elif request.method == 'POST':
 
             print('Add new student')
@@ -39,13 +41,10 @@ def add_student():
             major_input = request.form['major']
             advisor_id_input = request.form['advisor']
             gpa_input = request.form['gpa']
-
             query = 'INSERT INTO students (first_name, last_name, major, advisor_id, gpa) VALUES (%s,%s,%s,%s,%s)'
             data = (first_name_input, last_name_input, major_input, advisor_id_input, gpa_input)
             execute_query(db_connection, query, data)
-            return redirect('/students')
-      
-            
+            return redirect('/students')        
 
 # Listener
 
