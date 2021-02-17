@@ -14,28 +14,27 @@
     <body>
         <div class="container">
             <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="index.html">faber college</a>
+                <a class="navbar-brand" href="/">faber college</a>
               </nav>
              
             <hr>
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';" >students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton " id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/advisors';" >advisors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';" >classes</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classrooms.html';" >classrooms</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classrooms';" >classrooms</button>
                 </div>
-
             </div>
 
             <table class="table table-borderless table-hover w-auto">
@@ -48,32 +47,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for row in rows%}
                     <tr class="table_rows" id="">
-                        <td>1</td>
-                        <td>Jim</td>
-                        <td>Wilson</td>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
                         <td>
-                            <!--<span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
-                            <span class="edit">delete</span>-->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">delete</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
                         </td>
                     </tr>
-                    <tr class="table_rows" id="">
-                        <td>2</td>
-                        <td>Jared</td>
-                        <td>Porter</td>
-                        <td>
-                            <!--<span class="edit" onclick="window.location.href='addadvisor.html';">edit</span>
-                            <span class="edit">delete</span>-->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addadvisor.html';">delete</button>
-                        </td>
-                    </tr>    
+                    {% endfor %} 
                 </tbody>
                 <tfoot>
                     <td>
-                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='addadvisor.html';">+</button>
+                        <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="addButton" onclick="window.location.href='/addadvisor';">+</button>
                     </td>
                 </tfoot>
 

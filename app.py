@@ -14,6 +14,8 @@ db_connection = db.connect_to_database()
 def root():
     return render_template("index.html")
 
+# Students
+
 @app.route('/students')
 def students():
     print("Fetching student data")
@@ -45,6 +47,62 @@ def add_student():
             data = (first_name_input, last_name_input, major_input, advisor_id_input, gpa_input)
             execute_query(db_connection, query, data)
             return redirect('/students')        
+
+# Instructors
+
+@app.route('/instructors')
+def instructors():
+    print("Fetching instructor data")
+    db_connection = connect_to_database()
+    query = "SELECT * FROM instructors;"
+    result = execute_query(db_connection, query).fetchall();
+    print(result)
+    return render_template('instructors.html', rows=result)
+
+@app.route('/addinstructor', methods=['POST','GET'])
+def add_instructor():
+        db_connection = connect_to_database()
+        if request.method == 'GET':
+            return render_template('addinstructor.html')
+
+        elif request.method == 'POST':
+
+            print('Add new instructor')
+            first_name_input = request.form['first']
+            last_name_input = request.form['last']
+            department_input = request.form['department']
+            query = 'INSERT INTO instructors (first_name, last_name, department) VALUES (%s,%s,%s)'
+            data = (first_name_input, last_name_input, department_input)
+            execute_query(db_connection, query, data)
+            return redirect('/instructors')   
+
+# Advisors
+
+@app.route('/advisors')
+def advisors():
+    print("Fetching advisor data")
+    db_connection = connect_to_database()
+    query = "SELECT * FROM advisors;"
+    result = execute_query(db_connection, query).fetchall();
+    print(result)
+    return render_template('advisors.html', rows=result)
+
+@app.route('/addadvisor', methods=['POST','GET'])
+def add_advisor():
+        db_connection = connect_to_database()
+        if request.method == 'GET':
+            return render_template('addadvisor.html')
+
+        elif request.method == 'POST':
+            print('Add new advisor')
+            first_name_input = request.form['first']
+            last_name_input = request.form['last']
+            query = 'INSERT INTO advisors (first_name, last_name) VALUES (%s,%s)'
+            data = (first_name_input, last_name_input)
+            execute_query(db_connection, query, data)
+            return redirect('/advisors')   
+
+
 
 # Listener
 

@@ -22,21 +22,20 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';" >instructors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';" >advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/advisors';" >advisors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';" >classes</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classrooms.html';" >classrooms</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classrooms';" >classrooms</button>
                 </div>
-
             </div>
 
             <table class="table table-borderless table-hover w-auto">
@@ -53,24 +52,19 @@
                 </thead>
                 <tbody>
                     {% for row in rows%}
-                   
-                   
                     <tr class="table_rows" id="">
-                         
                         <td>{{row[0]}}</td>
                         <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
                         <td>{{row[3]}}</td> 
                         <td>{{row[4]+" "+row[5]}}</td>
                         <td>{{row[6]}}</td>
-                        
                         <td>
                             <a href="classesstudents.html" class="view_link">View Classes</a>
                         </td>
                         <td>
                             <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
                             <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
-                            
                         </td>
                     </tr>
                     {% endfor %}   

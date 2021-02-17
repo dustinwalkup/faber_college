@@ -14,20 +14,20 @@
     <body>
         <div class="container">
             <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="index.html">faber college</a>
+                <a class="navbar-brand" href="/">faber college</a>
               </nav>
              
             <hr>
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/students';" >students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton " id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/advisors';" >advisors</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';" >classes</button>
@@ -35,16 +35,11 @@
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classrooms';" >classrooms</button>
                 </div>
-
             </div>
-
 
             <div>
                 <div id="main_content">
-                    <!-- <form action="" method=""> -->
-                        <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="ADVISOR ID">
-                        </div>
+                    <form action="addadvisor" action="/addadvisor" method="POST">
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="FIRST NAME">
                         </div>
@@ -52,11 +47,10 @@
                             <input type="text" onkeypress="pulsar(this)" name="last" class="mb-2 mr-sm-2" autocomplete="off" placeholder="LAST NAME">
                         </div>
                         <div class="input-container">
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';">submit</button>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';">cancel</button>
-                        </div>
-                        
-                    <!-- </form> -->
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">submit</button>
+                            <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/advisors';">cancel</a>
+                        </div>      
+                    </form>
                 </div>
             </div>
         </div>

@@ -14,37 +14,33 @@
     <body>
         <div class="container">
             <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="index.html">faber college</a>
+                <a class="navbar-brand" href="/">faber college</a>
               </nav>
              
             <hr>
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='students.html';" >students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton">instructors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='advisors.html';" >advisors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/advisors';" >advisors</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';" >classes</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';" >classes</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classrooms.html';" >classrooms</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classrooms';" >classrooms</button>
                 </div>
-
             </div>
 
 
             <div>
                 <div id="main_content">
-                    <!-- <form action="" method=""> -->
-                        <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="INSTRUCTOR ID">
-                        </div>
+                    <form action="addinstructor" action="/addinstructor" method="POST">
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" placeholder="FIRST NAME">
                         </div>
@@ -52,13 +48,12 @@
                             <input type="text" onkeypress="pulsar(this)" name="last" class="mb-2 mr-sm-2" autocomplete="off" placeholder="LAST NAME">
                         </div>
                         <div class="input-container" >
-                            <input type="text" name="major" class="mb-2 mr-sm-2" autocomplete="off" placeholder="DEPARTMENT">
-                        <div class="input-container">
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';">submit</button>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='instructors.html';">cancel</button>
-                        </div>
-                        
-                    <!-- </form> -->
+                            <input type="text" name="department" class="mb-2 mr-sm-2" autocomplete="off" placeholder="DEPARTMENT">
+                            <div class="input-container">
+                                <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">submit</button>
+                                <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';">cancel</a>
+                            </div>
+                    </form>
                 </div>
             </div>
         </div>
