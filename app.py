@@ -102,7 +102,58 @@ def add_advisor():
             execute_query(db_connection, query, data)
             return redirect('/advisors')   
 
+# classes
 
+@app.route('/classes')
+def classes():
+    print("Fetching class data")
+    db_connection = connect_to_database()
+    query = "SELECT * FROM classes;"
+    result = execute_query(db_connection, query).fetchall();
+    print(result)
+    return render_template('classes.html', rows=result)
+
+@app.route('/addclass', methods=['POST','GET'])
+def add_class():
+        db_connection = connect_to_database()
+        if request.method == 'GET':
+            return render_template('addclass.html')
+
+        elif request.method == 'POST':
+            print('Add new class')
+            class_name_input = request.form['class']
+            class_subject_input = request.form['subject']
+            instructor_id_input = request.form['instructor']
+            classroom_id_input = request.form['classroom']
+            query = 'INSERT INTO classes (class_name, class_subject, instructor_id, classroom_id) VALUES (%s,%s,%s,%s)'
+            data = (class_name_input, class_subject_input, instructor_id_input, classroom_id_input)
+            execute_query(db_connection, query, data)
+            return redirect('/classes') 
+
+# classrooms
+
+@app.route('/classrooms')
+def classrooms():
+    print("Fetching classroom data")
+    db_connection = connect_to_database()
+    query = "SELECT * FROM classrooms;"
+    result = execute_query(db_connection, query).fetchall();
+    print(result)
+    return render_template('classrooms.html', rows=result)
+
+@app.route('/addclassroom', methods=['POST','GET'])
+def add_classroom():
+        db_connection = connect_to_database()
+        if request.method == 'GET':
+            return render_template('addclassroom.html')
+
+        elif request.method == 'POST':
+            print('Add new class')
+            capacity_input = request.form['capacity']
+            query = 'INSERT INTO classes (capacity) VALUES (%s)'
+            data = (capacity_input)
+            execute_query(db_connection, query, data)
+            return redirect('/classrooms') 
 
 # Listener
 
