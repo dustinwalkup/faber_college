@@ -108,7 +108,7 @@ def add_advisor():
 def classes():
     print("Fetching class data")
     db_connection = connect_to_database()
-    query = "SELECT * FROM classes;"
+    query = "SELECT classes.class_id, classes.class_name, classes.class_subject, instructors.first_name, instructors.last_name, classes.classroom_id FROM classes INNER JOIN instructors ON classes.instructor_id = instructors.instructor_id ORDER BY classes.class_id ASC;"
     result = execute_query(db_connection, query).fetchall();
     print(result)
     return render_template('classes.html', rows=result)
