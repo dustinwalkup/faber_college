@@ -46,22 +46,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for row in rows%}
                     <tr class="table_rows" id="">
-                        <td>1</td>
-                        <td>30</td>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
                         <td>
                             <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">edit</button>
                             <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">delete</button>
                         </td>
                     </tr>
-                    <tr class="table_rows" id="">
-                        <th>2</th>
-                        <td>60</td>
-                        <td>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclassroom.html';">delete</button>
-                        </td>
-                    </tr>    
+                    {% endfor %}
                 </tbody>
                 <tfoot>
                     <td>
