@@ -40,9 +40,9 @@
 
             <div>
                 <div id="main_content">
-                    <!-- <form action="" method=""> -->
+                    <form action="addclass" action="/addclass" method="POST">
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="class_name" class="mb-2 mr-sm-2" autocomplete="off" placeholder="CLASS NAME">
+                            <input type="text" onkeypress="pulsar(this)" name="class" class="mb-2 mr-sm-2" autocomplete="off" placeholder="CLASS NAME">
                         </div>
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="subject" class="mb-2 mr-sm-2" autocomplete="off" placeholder="SUBJECT">
@@ -51,11 +51,15 @@
                             <input type="text" onkeypress="pulsar(this)" name="instructor" class="mb-2 mr-sm-2" autocomplete="off" placeholder="INSTRUCTOR">
                         </div>
                         <div class="input-container">
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';">submit</button>
+                            <input type="text" onkeypress="pulsar(this)" name="classroom" class="mb-2 mr-sm-2" autocomplete="off" placeholder="CLASSROOM">
+                        </div>
+                        <div class="input-container">
+                            <!-- <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';">submit</button> -->
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">submit</button>
                             <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes';">cancel</button>
                         </div>
                         
-                    <!-- </form> -->
+                    </form>
                 </div>
             </div>
         </div>

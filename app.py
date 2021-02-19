@@ -148,11 +148,11 @@ def add_classroom():
             return render_template('addclassroom.html')
 
         elif request.method == 'POST':
-            print('Add new class')
+            print('Add new classroom')
             capacity_input = request.form['capacity']
-            query = 'INSERT INTO classes (capacity) VALUES (%s)'
+            query = 'INSERT INTO classrooms (capacity) VALUES (%s)'
             data = (capacity_input)
-            execute_query(db_connection, query, data)
+            execute_query(db_connection, query, [data])
             return redirect('/classrooms') 
 
 # Listener
