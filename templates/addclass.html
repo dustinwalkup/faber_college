@@ -47,16 +47,26 @@
                         <div class="input-container">
                             <input type="text" onkeypress="pulsar(this)" name="subject" class="mb-2 mr-sm-2" autocomplete="off" placeholder="SUBJECT">
                         </div>
-                        <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="instructor" class="mb-2 mr-sm-2" autocomplete="off" placeholder="INSTRUCTOR">
+                        <div class="input-container" >
+                            <select name="instructor" class="form-select" id="advisor_select" >
+                                <option>instructor</option>
+                                {% for instructor in instructors %}
+                                    <option value="{{ instructor[0] }}">{{ instructor[1]+ " " +instructor[2] }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
-                        <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="classroom" class="mb-2 mr-sm-2" autocomplete="off" placeholder="CLASSROOM">
+                        <div class="input-container" >
+                            <select name="classroom" class="form-select" id="advisor_select" >
+                                <option>classroom</option>
+                                {% for classroom in classrooms %}
+                                    <option value="{{ classroom[0] }}">{{ classroom[0] }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                         <div class="input-container">
                             <!-- <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';">submit</button> -->
                             <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">submit</button>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes';">cancel</button>
+                            <a type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';">cancel</a>
                         </div>
                         
                     </form>

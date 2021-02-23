@@ -117,7 +117,14 @@ def classes():
 def add_class():
         db_connection = connect_to_database()
         if request.method == 'GET':
-            return render_template('addclass.html')
+           
+            query_inst = 'SELECT instructor_id, first_name, last_name FROM instructors'
+            query_class = 'SELECT classroom_id FROM classrooms'
+            result_inst = execute_query(db_connection,query_inst).fetchall()
+            result_class = execute_query(db_connection, query_class).fetchall()
+            print(result_inst)
+            print(result_class)
+            return render_template('addclass.html', instructors = result_inst, classrooms = result_class)
 
         elif request.method == 'POST':
             print('Add new class')
