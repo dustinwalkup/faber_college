@@ -60,11 +60,11 @@
                         <td>{{row[4]+" "+row[5]}}</td>
                         <td>{{row[6]}}</td>
                         <td>
-                            <a href="classesstudents.html" class="view_link">View Classes</a>
+                            <a href="/classesstudents/{{row[0]}}" class="view_link">View Classes</a>
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
+                            <a type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" href="/updatestudent/{{row[0]}}">edit</a>
+                            <a type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" href="/deletestudent/{{row[0]}}">delete</a>
                         </td>
                     </tr>
                     {% endfor %}   

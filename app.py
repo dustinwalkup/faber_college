@@ -48,6 +48,55 @@ def add_student():
             execute_query(db_connection, query, data)
             return redirect('/students')        
 
+@app.route('/updatestudent/<int:id>', methods=['GET', 'POST'])
+def update_student(id):
+    db_connection = connect_to_database()
+    # display existing data
+    if request.method == 'GET':
+        print('Display existing data')
+
+        student_query = 'SELECT student_id, first_name, last_name, major, advisor_id, gpa FROM students WHERE student_id = %s' %(id)
+        student_result = execute_query(db_connection, student_query).fetchone()
+        
+
+        if student_result == None:
+            return "No such studen found"
+
+        advisors_query = 'SELECT advisor_id, first_name, last_name FROM advisors'
+        advisor_result = execute_query(db_connection, advisors_query).fetchall()
+
+        # determines advisor to display in select drop down menu
+        idx = 0
+        for row in advisor_result:
+            print(row[0])
+            if row[0] == student_result[4]:
+                print('success')
+                break
+            idx = idx + 1   
+        
+        return render_template('/updatestudent.html', student = student_result, advisors = advisor_result, adv_idx = idx)
+
+    elif request.method == "POST":
+        print('Post Request')
+        first_name_input = request.form['first']
+        last_name_input = request.form['last']
+        major_input = request.form['major']
+        advisor_id_input = request.form['advisor']
+        gpa_input = request.form['gpa']
+        query = 'UPDATE students  SET first_name = %s, last_name = %s, major = %s, advisor_id = %s, gpa = %s WHERE student_id = %s' 
+        data = (first_name_input, last_name_input, major_input, advisor_id_input, gpa_input, id)
+        execute_query(db_connection, query, data)
+        return redirect('/students')        
+
+
+@app.route('/deletestudent/<int:id>')
+def delete_student(id):
+    db_connection = connect_to_database()
+    query = 'DELETE FROM students where student_id = %s' %(id)
+    result = execute_query(db_connection, query)
+    return redirect("/students")
+         
+
 # Instructors
 
 @app.route('/instructors')
@@ -161,6 +210,51 @@ def add_classroom():
             data = (capacity_input)
             execute_query(db_connection, query, [data])
             return redirect('/classrooms') 
+
+# classesstudents
+
+@app.route('/classesstudents/<int:id>', methods=['GET', 'POST'])
+def classesstudents(id):
+    db_connection = connect_to_database()
+    if request.method == "GET":
+        print("Fetching classes_students data")
+        query = "SELECT classes_students.student_id, students.first_name, students.last_name, classes_students.class_id, classes.class_name, \
+                        classes.class_subject, instructors.first_name, instructors.last_name, classes.classroom_id, classes_students.grade FROM students \
+                        JOIN classes_students ON classes_students.student_id = students.student_id \
+                        JOIN classes ON classes_students.class_id = classes.class_id \
+                        JOIN instructors on classes.instructor_id = instructors.instructor_id \
+                        AND classes_students.student_id = %s" % (id)
+       
+        result = execute_query(db_connection, query).fetchall();
+        
+        classes_query = "SELECT * FROM classes;"
+        classes_result = execute_query(db_connection, classes_query).fetchall();
+
+        print(len(result))
+        if len(result) >= 1:
+            return render_template('classesstudents.html', rows=result, table=True, classes=classes_result)
+        else:
+            query = "SELECT students.student_id, students.first_name, students.last_name FROM students \
+                        WHERE students.student_id = %s" % (id)
+            result = execute_query(db_connection, query).fetchall();
+            print(result)
+            return render_template('classesstudents.html', rows=result, table=False, classes=classes_result)
+    
+    elif request.method == "POST":
+        print("Adding class to student")
+        class_id_input = request.form['class_id']
+        query = 'INSERT into classes_students (student_id, class_id) VALUES (%s, %s)'
+        data = (id, class_id_input)
+        execute_query(db_connection, query, data)
+        return redirect('/classesstudents/' + str(id))
+
+@app.route('/deleteclassesstudents/<int:st_id>/<int:cl_id>')
+def delete_classes_student(st_id, cl_id):
+    db_connection = connect_to_database()
+    query = 'DELETE FROM classes_students WHERE student_id = %s AND class_id = %s'  
+    data = (st_id, cl_id)
+    result = execute_query(db_connection, query, data)
+    return redirect("/classesstudents/" + str(st_id))       
 
 # Listener
 

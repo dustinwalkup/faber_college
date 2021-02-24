@@ -1,36 +1,32 @@
-
 body {
- 
-
-    background: #FFEFBA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    
+    background: #FFEFBA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #FFEFBA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #FFFFFF, #FFEFBA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-
 }
 
 #advisor_select {
     width: 30%;
     margin: 0 auto;
     text-align: left;
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-color:transparent;
+    background-color: transparent;
     padding-bottom: 5px;
     margin-bottom: 8px;
     border-color: transparent;
 }
 
-.tagline{
+.tagline {
     text-align: center;
     font-family: 'Roboto';
     text-transform: uppercase;
@@ -38,10 +34,9 @@ body {
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: 300;
-    
 }
 
-.table_header{
+.table_header {
     text-align: center;
     font-family: 'Roboto';
     text-transform: uppercase;
@@ -49,7 +44,6 @@ body {
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: 400;
-    
 }
 
 .navbar {
@@ -57,8 +51,6 @@ body {
     font-weight: 100;
     letter-spacing: 3px;
     text-transform: uppercase;
-    
-     
 }
 
 .button_row {
@@ -75,7 +67,7 @@ body {
 }
 
 .dropdown-item {
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     letter-spacing: 2px;
@@ -83,7 +75,7 @@ body {
 }
 
 #dropdownMenu2 {
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     letter-spacing: 2px;
@@ -91,7 +83,7 @@ body {
 }
 
 #myButton {
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     letter-spacing: 2px;
@@ -99,20 +91,19 @@ body {
 }
 
 .btn-outline-light {
-    color:#000000;
+    color: #000000;
     border-color: #000000;
-
 }
 
 .table {
     margin: auto;
     width: 50% !important;
     text-align: center;
-    color:black;
+    color: black;
     margin-top: 5%;
- }
+}
 
- thead {
+thead {
     text-align: center;
     font-family: 'Roboto';
     text-transform: uppercase;
@@ -120,50 +111,49 @@ body {
     font-size: 18px;
     letter-spacing: 3px;
     font-weight: 100;
-    
- }
+}
 
- .edit:hover {
-     text-decoration: underline;
- }
+.edit:hover {
+    text-decoration: underline;
+}
 
- #addButton {
-    border-radius:0;
+#addButton {
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 15px;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .input-container input {
-    border:0;
-    border-bottom:1px solid #061923;
-    background:transparent;
-    width:30%;
-    padding:8px 0 5px 0;
-    font-size:16px;
-    color:#000000;
+    border: 0;
+    border-bottom: 1px solid #061923;
+    background: transparent;
+    width: 30%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #000000;
     font-family: 'Roboto';
-    font-weight:300;
-    letter-spacing:2px;
-    margin:auto;
-
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: auto;
 }
 
-.input-container input:focus{
- border:none;
- outline:none;
- border-bottom:1px solid #0c8bc2;
- background:transparent;
+.input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #0c8bc2;
+    background: transparent;
 }
 
-#main_content{
-    text-align:center;
+#main_content {
+    text-align: center;
     padding-top: 60px;
 }
 
 #myButtonSmall {
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -173,10 +163,29 @@ body {
 }
 
 .view_link {
-    border-radius:0;
+    border-radius: 0;
     font-family: 'Roboto';
     font-weight: 300;
     /* letter-spacing: 2px;
     text-transform: uppercase; */
     color: black;
+}
+
+#add_class {
+    text-align: left;
+}
+
+#class_select {
+    width: 30%;
+    margin: 0;
+    text-align: left;
+    border-radius: 0;
+    font-family: 'Roboto';
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    border-color: transparent;
 }
