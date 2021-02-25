@@ -248,6 +248,32 @@ def classesstudents(id):
         execute_query(db_connection, query, data)
         return redirect('/classesstudents/' + str(id))
 
+@app.route('/updateclassesstudents/<int:st_id>/<int:cl_id>', methods=['GET', 'POST'])
+def update_classes_student(st_id, cl_id):
+    db_connection = connect_to_database()
+    # display existing data
+    if request.method == 'GET':
+        print('Display existing data')
+        
+        query = 'SELECT * FROM classes_students WHERE student_id = %s AND class_id = %s'  
+        data = (st_id, cl_id)
+        result = execute_query(db_connection, query, data).fetchall()
+
+        print(result)
+        if result == None:
+            return "No such class found"
+        
+        return render_template('/updateclassesstudents.html', student_id = st_id, class_id = cl_id)
+
+    elif request.method == "POST":
+        print('Post Request')
+        grade_input = request.form['grade']
+        
+        query = 'UPDATE classes_students  SET grade = %s WHERE student_id = %s AND class_id = %s' 
+        data = (grade_input,st_id, cl_id)
+        execute_query(db_connection, query, data)
+        return redirect("/classesstudents/" + str(st_id))       
+
 @app.route('/deleteclassesstudents/<int:st_id>/<int:cl_id>')
 def delete_classes_student(st_id, cl_id):
     db_connection = connect_to_database()
