@@ -8,7 +8,7 @@ from database.db_connector import connect_to_database, execute_query
 app = Flask(__name__)
 db_connection = db.connect_to_database()
 
-# Routes
+### Routes ###
 
 @app.route('/')
 def root():
@@ -60,7 +60,7 @@ def update_student(id):
         
 
         if student_result == None:
-            return "No such studen found"
+            return "No such student found"
 
         advisors_query = 'SELECT advisor_id, first_name, last_name FROM advisors'
         advisor_result = execute_query(db_connection, advisors_query).fetchall()
@@ -124,6 +124,38 @@ def add_instructor():
             data = (first_name_input, last_name_input, department_input)
             execute_query(db_connection, query, data)
             return redirect('/instructors')   
+
+@app.route('/updateinstructor/<int:id>', methods=['GET', 'POST'])
+def update_instructor(id):
+    db_connection = connect_to_database()
+    # display existing data
+    if request.method == 'GET':
+        print('Display existing data')
+
+        query = 'SELECT instructor_id, first_name, last_name, department FROM instructors WHERE instructor_id = %s' %(id)
+        result = execute_query(db_connection, query).fetchone()  
+        print(result)
+        if result == None:
+            return "No such instructor found"
+           
+        return render_template('/updateinstructor.html', instructor = result)
+
+    elif request.method == "POST":
+        print('Post Request')
+        first_name_input = request.form['first']
+        last_name_input = request.form['last']
+        department_input = request.form['department']
+        query = 'UPDATE instructors  SET first_name = %s, last_name = %s, department = %s WHERE instructor_id = %s' 
+        data = (first_name_input, last_name_input, department_input, id)
+        execute_query(db_connection, query, data)
+        return redirect('/instructors')        
+
+@app.route('/deleteinstructor/<int:id>')
+def delete_instructor(id):
+    db_connection = connect_to_database()
+    query = 'DELETE FROM instructors where instructor_id = %s' %(id)
+    result = execute_query(db_connection, query)
+    return redirect("/instructors")
 
 # Advisors
 

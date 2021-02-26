@@ -55,8 +55,8 @@
                         <td>{{row[2]}}</td>
                         <td>{{row[3]}}</td> 
                         <td>
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addstudent.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addstudent.html';">delete</button>
+                            <a type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" href="/updateinstructor/{{row[0]}}">edit</a>
+                            <a type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" href="/deleteinstructor/{{row[0]}}">delete</a>
                         </td>
                     </tr>
                     {% endfor %} 

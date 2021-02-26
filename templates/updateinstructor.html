@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Students</title>
+        <title>Instructors</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -21,10 +21,10 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/students';">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton active" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/advisors';" >advisors</button>
@@ -40,30 +40,19 @@
 
             <div>
                 <div id="main_content">
-                    <form id="updatestudent" action="/updatestudent/{{student[0]}}" method="POST">
+                    <form id="updateinstructor" action="/updateinstructor/{{instructor[0]}}" method="POST">
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" value="{{student[1]}}" placeholder="FIRST NAME">
+                            <input type="text" onkeypress="pulsar(this)" name="first" class="mb-2 mr-sm-2" autocomplete="off" value="{{instructor[1]}}" placeholder="FIRST NAME">
                         </div>
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="last" class="mb-2 mr-sm-2" autocomplete="off" value="{{student[2]}}" placeholder="LAST NAME">
+                            <input type="text" onkeypress="pulsar(this)" name="last" class="mb-2 mr-sm-2" autocomplete="off" value="{{instructor[2]}}" placeholder="LAST NAME">
                         </div>
                         <div class="input-container" >
-                            <input type="text" name="major" class="mb-2 mr-sm-2" autocomplete="off" value="{{student[3]}}" placeholder="MAJOR">
-                        </div>
-                        <div class="input-container">
-                            <input type="text" name="gpa" autocomplete="off" class="mb-2 mr-sm-2" value="{{student[5]}}" placeholder="GPA">
-                        </div>
-                        <div class="input-container" >
-                                <select name="advisor" class="form-select" id="advisor_select" >
-                                    <option value="{{ advisors[adv_idx][0] }}">{{ advisors[adv_idx][1]+ " " + advisors[adv_idx][2] }}</option>
-                                    {% for adv in advisors %}
-                                        <option value="{{ adv[0] }}">{{ adv[1]+ " " +adv[2] }}</option>
-                                    {% endfor %}
-                                </select>
+                            <input type="text" name="department" class="mb-2 mr-sm-2" autocomplete="off" value="{{instructor[3]}}" placeholder="DEPARTMENT">
                         </div>
                         <div class="input-container">
                             <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">update</button>
-                            <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/students';">cancel</a>
+                            <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';">cancel</a>
                         </div>
 
                     </form>
