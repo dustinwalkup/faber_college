@@ -59,8 +59,8 @@
                         <td>
                             <!--<span class="edit" onclick="window.location.href='addclass.html';">edit</span>
                             <span class="edit">delete</span>-->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='addclass.html';">edit</button>
-                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='addclass.html';">delete</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 btn-xs" id="myButtonSmall" onclick="window.location.href='/updateclass/{{row[0]}}';">edit</button>
+                            <button type="submit" class="btn btn-outline-danger mb-2" id="myButtonSmall" onclick="window.location.href='/deleteclass/{{row[0]}}';">delete</button>
                         </td>
                     </tr>
                     {% endfor %} 

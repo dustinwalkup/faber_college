@@ -6,7 +6,7 @@
         <title>Classes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="../static/css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
         
             <div class="row button_row">
                 <div class="col" align="center">
-                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton " id="myButton" onclick="window.location.href='/students';">students</button>
+                    <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/students';">students</button>
                 </div>
                 <div class="col" align="center">
                     <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/instructors';" >instructors</button>
@@ -40,16 +40,18 @@
 
             <div>
                 <div id="main_content">
-                    <form action="addclass" action="/addclass" method="POST">
+                    <form id="updateclass" action="/updateclass/{{classres[0]}}" method="POST">
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="class" class="mb-2 mr-sm-2" autocomplete="off" placeholder="CLASS NAME">
+                            <input type="text" onkeypress="pulsar(this)" name="name" class="mb-2 mr-sm-2" autocomplete="off" value="{{classres[1]}}" placeholder="CLASS NAME">
                         </div>
                         <div class="input-container">
-                            <input type="text" onkeypress="pulsar(this)" name="subject" class="mb-2 mr-sm-2" autocomplete="off" placeholder="SUBJECT">
+                            <input type="text" onkeypress="pulsar(this)" name="subject" class="mb-2 mr-sm-2" autocomplete="off" value="{{classres[2]}}" placeholder="CLASS SUBJECT">
                         </div>
                         <div class="input-container" >
                             <select name="instructor" class="form-select" id="advisor_select" >
-                                <option>instructor</option>
+                                <!--this option value only works for the first 4 id's in classes then causes an error output for id's that come after, also adds a ">" at the end of each name...-->
+                                <!--the update operation works for all id's, only the value is causing issues-->
+                                <option value="{{ instructors[instr_idx][0] }}">{{ instructors[instr_idx][1]+ " " +instructors[instr_idx][2] }}></option>
                                 {% for instructor in instructors %}
                                     <option value="{{ instructor[0] }}">{{ instructor[1]+ " " +instructor[2] }}</option>
                                 {% endfor %}
@@ -57,18 +59,17 @@
                         </div>
                         <div class="input-container" >
                             <select name="classroom" class="form-select" id="advisor_select" >
-                                <option>classroom</option>
+                                <option value="{{ classrooms[clsrm_idx][0] }}">{{ classrooms[clsrm_idx][0] }}</option>
                                 {% for classroom in classrooms %}
                                     <option value="{{ classroom[0] }}">{{ classroom[0] }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="input-container">
-                            <!-- <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='classes.html';">submit</button> -->
-                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">submit</button>
-                            <a type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';">cancel</a>
+                            <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">update</button>
+                            <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';">cancel</a>
                         </div>
-                        
+
                     </form>
                 </div>
             </div>
