@@ -270,10 +270,11 @@ def update_class(id):
         for row in instructor_result:
             # debug
             print("instctr result:")
-            print(row[0])
+            print(instructor_result)
+            # print(row[0])
             print("class result:")
             print(class_result[4])
-            if row[0] == class_result[4]:
+            if row[0] == class_result[3]: # changed from class_result[4]
                 print('success')
                 break
             idx = idx + 1

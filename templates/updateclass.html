@@ -50,7 +50,7 @@
                         <div class="input-container" >
                             <select name="instructor" class="form-select" id="advisor_select" >
                                 <!--debug-->
-                                <option value="{{ instructors[instr_idx][0] }}">{{ instructors[instr_idx][1]+ " " +instructors[instr_idx][2] }}></option>
+                                <option value="{{ instructors[instr_idx][0] }}">{{ instructors[instr_idx][1]+ " " +instructors[instr_idx][2] }}</option>
                                 {% for instructor in instructors %}
                                     <option value="{{ instructor[0] }}">{{ instructor[1]+ " " +instructor[2] }}</option>
                                 {% endfor %}
@@ -64,7 +64,7 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="input-container">
+                        <div class="input-container"></div>
                             <button type="submit" class="btn btn-outline-secondary mb-2 myButton" id="myButton">update</button>
                             <a type="" class="btn btn-outline-secondary mb-2 myButton" id="myButton" onclick="window.location.href='/classes';">cancel</a>
                         </div>
