@@ -49,8 +49,7 @@
                         </div>
                         <div class="input-container" >
                             <select name="instructor" class="form-select" id="advisor_select" >
-                                <!--this option value only works for the first 4 id's in classes then causes an error output for id's that come after, also adds a ">" at the end of each name...-->
-                                <!--the update operation works for all id's, only the value is causing issues-->
+                                <!--debug-->
                                 <option value="{{ instructors[instr_idx][0] }}">{{ instructors[instr_idx][1]+ " " +instructors[instr_idx][2] }}></option>
                                 {% for instructor in instructors %}
                                     <option value="{{ instructor[0] }}">{{ instructor[1]+ " " +instructor[2] }}</option>

@@ -268,7 +268,11 @@ def update_class(id):
         # determines instructor to display in select drop down menu
         idx = 0
         for row in instructor_result:
+            # debug
+            print("instctr result:")
             print(row[0])
+            print("class result:")
+            print(class_result[4])
             if row[0] == class_result[4]:
                 print('success')
                 break
