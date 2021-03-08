@@ -189,3 +189,7 @@ thead {
     margin-bottom: 8px;
     border-color: transparent;
 }
+
+.filter {
+    text-align: center;
+}

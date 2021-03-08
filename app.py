@@ -16,14 +16,51 @@ def root():
 
 # Students
 
-@app.route('/students')
+@app.route('/students', methods=['POST', 'GET'])
 def students():
-    print("Fetching student data")
     db_connection = connect_to_database()
-    query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id;"
-    result = execute_query(db_connection, query).fetchall();
-    # print(result)
-    return render_template('students.html', rows=result)
+    if request.method == 'GET': 
+        print("Fetching student data")
+        query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id;"
+        result = execute_query(db_connection, query).fetchall();
+        # print(result)
+        return render_template('students.html', rows=result)
+    
+    elif request.method == 'POST':
+        print("post request")
+        filter_value = request.form['filter']
+        select_value = request.form['select']
+        print('filter value: '+ filter_value)
+        print('select value: '+ select_value)
+         
+         
+        if select_value == 'id':
+            print('id')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE students.student_id = %s" %(filter_value)
+
+        elif select_value == 'first name':
+            print('first name')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE students.first_name = '%s'" %(filter_value)
+
+        elif select_value == 'last name':
+            print('last name')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE students.last_name = '%s'" %(filter_value)
+
+        elif select_value == 'major':
+            print('major')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE students.major = '%s'" %(filter_value)
+
+        elif select_value == 'advisor last name':
+            print('advisor')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE advisors.last_name = '%s'" %(filter_value)
+
+        elif select_value == 'gpa':
+            print('gpa')
+            query = "SELECT students.student_id, students.first_name, students.last_name, students.major, advisors.first_name, advisors.last_name, students.gpa FROM students INNER JOIN advisors ON students.advisor_id = advisors.advisor_id WHERE students.gpa = '%s'" %(filter_value)
+
+         
+        result = execute_query(db_connection, query).fetchall();
+        return render_template('students.html', rows=result)
 
 @app.route('/addstudent', methods=['POST','GET'])
 def add_student():
